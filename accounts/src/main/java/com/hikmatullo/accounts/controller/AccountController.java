@@ -1,8 +1,8 @@
 package com.hikmatullo.accounts.controller;
 
-import com.hikmatullo.app.dto.CustomerDto;
-import com.hikmatullo.app.payload.ApiResponse;
-import com.hikmatullo.app.service.IAccountService;
+import com.hikmatullo.accounts.dto.CustomerDto;
+import com.hikmatullo.accounts.payload.ApiResponse;
+import com.hikmatullo.accounts.service.IAccountService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;

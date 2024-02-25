@@ -1,6 +1,6 @@
 package com.hikmatullo.accounts.exception;
 
-import com.hikmatullo.app.payload.ApiErrorResponse;
+import com.hikmatullo.accounts.payload.ApiErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;

@@ -1,16 +1,16 @@
 package com.hikmatullo.accounts.service.imp;
 
-import com.hikmatullo.app.dto.AccountDto;
-import com.hikmatullo.app.dto.CustomerDto;
-import com.hikmatullo.app.entity.Account;
-import com.hikmatullo.app.entity.Customer;
-import com.hikmatullo.app.exception.CustomAlreadyException;
-import com.hikmatullo.app.exception.CustomNotFoundException;
-import com.hikmatullo.app.mapper.AccountMapper;
-import com.hikmatullo.app.mapper.CustomerMapper;
-import com.hikmatullo.app.repository.AccountRepository;
-import com.hikmatullo.app.repository.CustomerRepository;
-import com.hikmatullo.app.service.IAccountService;
+import com.hikmatullo.accounts.dto.AccountDto;
+import com.hikmatullo.accounts.dto.CustomerDto;
+import com.hikmatullo.accounts.entity.Account;
+import com.hikmatullo.accounts.entity.Customer;
+import com.hikmatullo.accounts.exception.CustomAlreadyException;
+import com.hikmatullo.accounts.exception.CustomNotFoundException;
+import com.hikmatullo.accounts.mapper.AccountMapper;
+import com.hikmatullo.accounts.mapper.CustomerMapper;
+import com.hikmatullo.accounts.repository.AccountRepository;
+import com.hikmatullo.accounts.repository.CustomerRepository;
+import com.hikmatullo.accounts.service.IAccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

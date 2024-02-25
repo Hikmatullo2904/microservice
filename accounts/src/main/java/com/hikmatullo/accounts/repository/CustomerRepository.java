@@ -1,6 +1,6 @@
 package com.hikmatullo.accounts.repository;
 
-import com.hikmatullo.app.entity.Customer;
+import com.hikmatullo.accounts.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

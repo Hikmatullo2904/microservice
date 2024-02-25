@@ -1,7 +1,8 @@
 package com.hikmatullo.accounts.mapper;
 
-import com.hikmatullo.app.dto.AccountDto;
-import com.hikmatullo.app.entity.Account;
+
+import com.hikmatullo.accounts.dto.AccountDto;
+import com.hikmatullo.accounts.entity.Account;
 import org.springframework.stereotype.Component;
 
 @Component

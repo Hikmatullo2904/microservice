@@ -1,6 +1,7 @@
 package com.hikmatullo.accounts.service;
 
-import com.hikmatullo.app.dto.CustomerDto;
+
+import com.hikmatullo.accounts.dto.CustomerDto;
 
 public interface IAccountService {
     void save(CustomerDto dto);
