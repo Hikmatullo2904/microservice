@@ -30,6 +30,9 @@ public class AccountService implements IAccountService {
         Optional<Customer> customerByEmail = customerRepository.findCustomerByEmail(dto.getEmail());
         if(customerByEmail.isPresent())
             throw new CustomAlreadyException("there is a customer registered with this email");
+        Optional<Customer> byPhoneNumber = customerRepository.findByPhoneNumber(dto.getPhoneNumber());
+        if(byPhoneNumber.isPresent())
+            throw new CustomAlreadyException("there is a customer registered with this phone number");
         Customer customer = customerMapper.mapToCustomer(dto);
         customer = customerRepository.save(customer);
         Account newAccount = createNewAccount(customer);
@@ -51,7 +54,7 @@ public class AccountService implements IAccountService {
         Customer customer = customerRepository.findByPhoneNumber(mobileNumber).orElseThrow(
                 () -> new CustomNotFoundException("Customer not found")
         );
-        Account accounts = accountRepository.findById(customer.getId()).orElseThrow(
+        Account accounts = accountRepository.findAccountByCustomerId(customer.getId()).orElseThrow(
                 () -> new CustomNotFoundException("Account not found")
         );
         CustomerDto customerDto = customerMapper.mapToCustomerDto(customer);

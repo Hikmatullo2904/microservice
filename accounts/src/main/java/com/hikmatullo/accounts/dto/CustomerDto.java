@@ -29,6 +29,7 @@ public class CustomerDto {
     @NotBlank(message = "email cannot be blank")
     private String email;
 
+    @NotBlank
     @Pattern(regexp = "^\\d{9}$")
     private String phoneNumber;
 
