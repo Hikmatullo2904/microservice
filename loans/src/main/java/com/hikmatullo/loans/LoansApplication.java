@@ -1,8 +1,10 @@
 package com.hikmatullo.loans;
 
+import com.hikmatullo.loans.dto.LoansContactDto;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
@@ -14,6 +16,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
                 description = "Loans microservice"
         )
 )
+@EnableConfigurationProperties(value = LoansContactDto.class)
 public class LoansApplication {
 
     public static void main(String[] args) {

@@ -2,6 +2,7 @@ package com.hikmatullo.loans.controller;
 
 
 import com.hikmatullo.loans.constants.LoansConstants;
+import com.hikmatullo.loans.dto.LoansContactDto;
 import com.hikmatullo.loans.dto.ErrorResponseDto;
 import com.hikmatullo.loans.dto.LoansDto;
 import com.hikmatullo.loans.dto.ResponseDto;
@@ -36,6 +37,7 @@ import org.springframework.web.bind.annotation.*;
 public class LoansController {
 
     private ILoansService iLoansService;
+    private LoansContactDto loansContactDto;
 
     @Operation(
             summary = "Create Loan REST API",
@@ -164,5 +166,11 @@ public class LoansController {
                     .body(new ResponseDto( LoansConstants.MESSAGE_417_DELETE, HttpStatus.EXPECTATION_FAILED));
         }
     }
+
+    @GetMapping("/contact-info")
+    public LoansContactDto getLoansContactDto() {
+        return loansContactDto;
+    }
+
 
 }
