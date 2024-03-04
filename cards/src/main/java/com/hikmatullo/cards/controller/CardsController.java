@@ -2,6 +2,7 @@ package com.hikmatullo.cards.controller;
 
 
 import com.hikmatullo.cards.constants.CardsConstants;
+import com.hikmatullo.cards.dto.CardsContactInfoDto;
 import com.hikmatullo.cards.dto.CardsDto;
 import com.hikmatullo.cards.dto.ErrorResponseDto;
 import com.hikmatullo.cards.dto.ResponseDto;
@@ -15,6 +16,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -31,11 +33,12 @@ import org.springframework.web.bind.annotation.*;
 )
 @RestController
 @RequestMapping(path = "/api", produces = {MediaType.APPLICATION_JSON_VALUE})
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Validated
 public class CardsController {
 
-    private ICardsService iCardsService;
+    private final ICardsService iCardsService;
+    private final CardsContactInfoDto cardsContactInfoDto;
 
     @Operation(
             summary = "Create Card REST API",
@@ -160,6 +163,11 @@ public class CardsController {
                     .status(HttpStatus.EXPECTATION_FAILED)
                     .body(new ResponseDto(CardsConstants.STATUS_417, CardsConstants.MESSAGE_417_DELETE));
         }
+    }
+
+    @GetMapping("/contact-info")
+    public CardsContactInfoDto getContactInfoDto() {
+        return cardsContactInfoDto;
     }
 
 }
