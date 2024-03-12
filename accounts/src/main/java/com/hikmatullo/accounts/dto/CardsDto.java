@@ -1,11 +1,11 @@
-package com.hikmatullo.cards.dto;
+package com.hikmatullo.accounts.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.PositiveOrZero;
-import lombok.*;
+import lombok.Data;
 
 @Schema(name = "Cards",
         description = "Schema to hold Card information"
@@ -14,7 +14,7 @@ import lombok.*;
 public class CardsDto {
 
     @NotEmpty(message = "Mobile Number can not be a null or empty")
-    @Pattern(regexp="(^$|[0-9]{9})",message = "Mobile Number must be 10 digits")
+    @Pattern(regexp="(^\\d{9}$)",message = "Mobile Number must be 10 digits")
     @Schema(
             description = "Mobile Number of Customer", example = "4354437687"
     )

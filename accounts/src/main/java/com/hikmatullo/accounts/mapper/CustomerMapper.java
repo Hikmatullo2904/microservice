@@ -1,6 +1,7 @@
 package com.hikmatullo.accounts.mapper;
 
 
+import com.hikmatullo.accounts.dto.CustomerDetailsDto;
 import com.hikmatullo.accounts.dto.CustomerDto;
 import com.hikmatullo.accounts.entity.Customer;
 import org.springframework.stereotype.Component;
@@ -25,6 +26,16 @@ public class CustomerMapper {
 
         return dto;
     }
+
+    public CustomerDetailsDto mapToCustomerDetailsDto(Customer customer) {
+        CustomerDetailsDto customerDetailsDto = new CustomerDetailsDto();
+        customerDetailsDto.setName(customer.getName());
+        customerDetailsDto.setEmail(customer.getEmail());
+        customerDetailsDto.setPhoneNumber(customer.getPhoneNumber());
+        return customerDetailsDto;
+    }
+
+
 
 
 }
